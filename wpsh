@@ -1,0 +1,10 @@
+#!/bin/bash 
+
+echo "make directory? (yes or no)"
+read yes
+wpdownload="wp core download --locale=ja"
+if [[ $yes =~ y ]]; then
+    read directory
+    wpdownload="${wpdownload} --path=${directory}"
+fi
+$wpdownload
